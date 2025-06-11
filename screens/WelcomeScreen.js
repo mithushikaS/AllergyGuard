@@ -38,7 +38,7 @@ const WelcomeScreen = () => {
         <SafeAreaView style={styles.contentContainer}>
           <View style={styles.logoContainer}>
             <Image
-              source={{ uri: 'https://api.a0.dev/assets/image?text=AllergySafe+Logo&aspect=1:1' }}
+              source={require('../assets/logo.png')} 
               style={styles.logo}
             />
             <Text style={styles.logoText}>AllergyGuard</Text>

@@ -141,7 +141,7 @@ const handleLogin = async () => {
         <ScrollView contentContainerStyle={styles.scrollContent}>
           <View style={styles.logoContainer}>
             <Image
-              source={{ uri: 'https://api.a0.dev/assets/image?text=AllergySafe+Logo&aspect=1:1' }}
+              source={require('../assets/logo.png')} // Adjust path if needed
               style={styles.logo}
             />
             <Text style={styles.logoText}>AllergyGuard</Text>

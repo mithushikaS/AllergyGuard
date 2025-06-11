@@ -118,7 +118,7 @@ const handleSignup = async () => {
 
           <View style={styles.logoContainer}>
             <Image
-              source={{ uri: 'https://api.a0.dev/assets/image?text=AllergySafe+Logo&aspect=1:1' }}
+              source={require('../assets/logo.png')} 
               style={styles.logo}
             />
             <Text style={styles.logoText}>AllergyGuard</Text>
@@ -264,8 +264,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   logo: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     borderRadius: 20,
   },
   logoText: {
