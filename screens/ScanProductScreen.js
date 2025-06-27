@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Camera } from 'expo-camera';
 import * as ImagePicker from 'expo-image-picker';
-import Toast from 'react-native-toast-message';
+import { toast } from 'sonner-native';
 
 export default function ScanProductScreen() {
   const navigation = useNavigation();
@@ -44,11 +44,7 @@ export default function ScanProductScreen() {
       }, 1000);
     } catch (error) {
       console.error('Error taking picture:', error);
-      Toast.show({
-        type: 'error',
-        text1: 'Failed to capture image',
-        position: 'bottom'
-      });
+      toast.error('Failed to capture image');
       setScanning(false);
     }
   };
@@ -66,22 +62,14 @@ export default function ScanProductScreen() {
       }, 1000);
     } catch (error) {
       console.error('Error picking image:', error);
-      Toast.show({
-        type: 'error',
-        text1: 'Failed to select image',
-        position: 'bottom'
-      });
+      toast.error('Failed to select image');
       setScanning(false);
     }
   };
 
   const analyzeImage = () => {
     setScanning(true);
-    Toast.show({
-      type: 'info',
-      text1: 'Analyzing ingredients...',
-      position: 'bottom'
-    });
+    toast.message('Analyzing ingredients...');
 
     setTimeout(() => {
       setScanning(false);
@@ -215,7 +203,6 @@ export default function ScanProductScreen() {
           </View>
         ))}
       </View>
-      <Toast />
     </SafeAreaView>
   );
 }
@@ -305,3 +292,4 @@ const styles = StyleSheet.create({
   instructionNumberText: { color: '#ffffff', fontWeight: 'bold' },
   instructionText: { color: '#cbd5e1', fontSize: 16, flex: 1 },
 });
+

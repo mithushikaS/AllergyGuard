@@ -4,8 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Toast from 'react-native-toast-message';
-import { toast } from 'react-native-toast-message'; 
+import { toast } from 'sonner-native';
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
@@ -21,13 +20,9 @@ export default function ProfileScreen() {
   };
 
   const saveProfile = () => {
-  // Save profile logic would go here
-  Toast.show({
-    type: 'success',
-    text1: 'Profile updated successfully',
-    position: 'bottom'
-  });
-  
+    // Save profile logic would go here
+    toast.success('Profile updated successfully');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -343,4 +338,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-});}
+});
